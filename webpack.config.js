@@ -47,17 +47,10 @@ module.exports = {
     path: path.resolve('dist') // 打包后的目录，必须是绝对路径
   },
   module: {
-    rules: [{
-        enforce: "pre",
-        test: /\.js$/,
-        exclude: /node_modules/,
-        include: /src/,
-        loader: "eslint-loader",
-      },
+    rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         use: ['babel-loader'],
-        include: /src/, // 只转化src目录下的js
         exclude: /node_modules/ // 排除掉node_modules，优化打包速度
       },
       {

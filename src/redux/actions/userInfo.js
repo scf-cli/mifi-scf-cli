@@ -22,14 +22,14 @@ function getUserInfoFail() {
 }
 
 export function getUserInfo() {
-  return function (dispatch) {
+  return function(dispatch) {
     dispatch(getUserInfoRequest());
 
     return fetch('http://localhost:3000/mock/user.json')
-      .then((response) => {
+      .then(response => {
         return response.json();
       })
-      .then((json) => {
+      .then(json => {
         dispatch(getUserInfoSuccess(json));
       })
       .catch(() => {

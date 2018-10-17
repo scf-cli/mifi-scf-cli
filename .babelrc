@@ -1,0 +1,34 @@
+{
+    "env": {
+      "development":{
+        "presets": [
+          "env",
+          "stage-2",
+          "react"
+        ],
+        "plugins": [
+          "transform-decorators-legacy",
+          "transform-runtime",
+          "transform-export-extensions"
+        ]
+      },
+      "production": {
+        "presets": [
+          [
+            "env",
+            {
+              "loose": true,
+              "modules": false
+            }
+          ],
+          "stage-2",
+          "react"
+        ],
+        "plugins": [
+          "transform-decorators-legacy",
+          "transform-runtime",
+          "transform-export-extensions"
+        ]
+      }
+    }
+  }
